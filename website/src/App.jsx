@@ -104,6 +104,8 @@ export default function App() {
 
   const hasPrev = currentProblemIndex > 0;
   const hasNext = currentProblemIndex !== -1 && currentProblemIndex < filteredProblems.length - 1;
+  const prevProblem = hasPrev ? filteredProblems[currentProblemIndex - 1] : null;
+  const nextProblem = hasNext ? filteredProblems[currentProblemIndex + 1] : null;
 
   const handleNavigateModal = (direction) => {
     if (direction === 'prev' && hasPrev) {
@@ -124,8 +126,8 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50 text-gray-900">
-      {/* Navbar with integrated search */}
+    <div className="min-h-screen flex flex-col bg-[#1a1d24] text-slate-100">
+      {/* Navbar with integrated search matching walkccc */}
       <Navbar
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
@@ -168,6 +170,8 @@ export default function App() {
           onNavigate={handleNavigateModal}
           hasPrev={hasPrev}
           hasNext={hasNext}
+          prevProblem={prevProblem}
+          nextProblem={nextProblem}
         />
       )}
     </div>

@@ -2,15 +2,15 @@ import React from 'react';
 import { Clock } from 'lucide-react';
 
 export default function ProblemCard({ problem, onSelect }) {
-  const getDifficultyColor = (diff) => {
+  const getDifficultyBadge = (diff) => {
     switch (diff) {
       case 'Easy':
-        return 'text-emerald-700 bg-emerald-50 border-emerald-200';
+        return 'bg-[#00b8a3] text-white';
       case 'Hard':
-        return 'text-rose-700 bg-rose-50 border-rose-200';
+        return 'bg-[#ff375f] text-white';
       case 'Medium':
       default:
-        return 'text-amber-700 bg-amber-50 border-amber-200';
+        return 'bg-[#ffb300] text-black';
     }
   };
 
@@ -19,16 +19,16 @@ export default function ProblemCard({ problem, onSelect }) {
   return (
     <div
       onClick={() => onSelect(problem)}
-      className="group relative flex flex-col justify-between p-4 rounded-xl bg-white hover:bg-amber-50/20 border border-gray-200 hover:border-amber-400 transition-all duration-150 cursor-pointer shadow-sm hover:shadow-md"
+      className="group relative flex flex-col justify-between p-4 sm:p-5 rounded-xl bg-[#222731] hover:bg-[#262c37] border border-[#2d3442] hover:border-[#3b82f6]/80 transition-all duration-150 cursor-pointer shadow-md hover:shadow-lg"
     >
       <div>
-        {/* Header: ID & Difficulty */}
-        <div className="flex items-center justify-between gap-2 mb-2">
-          <span className="text-xs font-mono font-semibold px-2 py-0.5 rounded bg-gray-100 text-gray-700 group-hover:bg-amber-100 group-hover:text-amber-800 transition-colors">
+        {/* Header: ID & Difficulty Badge */}
+        <div className="flex items-center justify-between gap-2 mb-3">
+          <span className="text-xs font-mono font-semibold px-2 py-0.5 rounded bg-[#1a1d24] text-gray-400 group-hover:text-blue-400 border border-[#2d3442] transition-colors">
             #{problem.id}
           </span>
           <span
-            className={`text-[11px] font-medium px-2 py-0.5 rounded-full border ${getDifficultyColor(
+            className={`text-[10px] font-extrabold px-2.5 py-0.5 rounded-sm uppercase tracking-wider ${getDifficultyBadge(
               problem.difficulty
             )}`}
           >
@@ -37,38 +37,38 @@ export default function ProblemCard({ problem, onSelect }) {
         </div>
 
         {/* Title */}
-        <h3 className="font-semibold text-sm sm:text-base text-gray-900 group-hover:text-amber-600 transition-colors line-clamp-1">
+        <h3 className="font-bold text-base text-gray-100 group-hover:text-[#42a5f5] transition-colors line-clamp-1">
           {problem.title}
         </h3>
 
         {/* Time / Notes if available */}
         {problem.notes && (
-          <div className="flex items-center gap-1.5 mt-2 text-[11px] text-gray-500">
-            <Clock className="w-3 h-3 text-gray-400" />
+          <div className="flex items-center gap-1.5 mt-2.5 text-[11px] text-gray-400">
+            <Clock className="w-3 h-3 text-amber-400/80" />
             <span className="truncate">{problem.notes}</span>
           </div>
         )}
       </div>
 
       {/* Footer: Solutions / Languages */}
-      <div className="flex items-center justify-between gap-2 mt-4 pt-3 border-t border-gray-100">
+      <div className="flex items-center justify-between gap-2 mt-4 pt-3 border-t border-[#2d3442]/80">
         <div className="flex items-center gap-1.5 overflow-hidden">
           {hasSolutions ? (
             problem.solutions.map((sol, idx) => (
               <span
                 key={idx}
-                className="text-[11px] font-mono px-2 py-0.5 rounded bg-gray-100 text-gray-600 border border-gray-200"
+                className="text-[11px] font-mono px-2 py-0.5 rounded bg-[#1a1d24] text-gray-300 border border-[#2d3442]"
               >
                 {sol.language}
               </span>
             ))
           ) : (
-            <span className="text-[11px] text-gray-400 italic">No code uploaded</span>
+            <span className="text-[11px] text-gray-500 italic">No code attached</span>
           )}
         </div>
 
-        <div className="flex items-center text-xs text-gray-400 group-hover:text-amber-600 font-medium transition-colors">
-          <span>View</span>
+        <div className="flex items-center text-xs text-blue-400 group-hover:text-blue-300 font-semibold transition-colors">
+          <span>View Solution</span>
           <span className="ml-1 transition-transform group-hover:translate-x-0.5">→</span>
         </div>
       </div>
