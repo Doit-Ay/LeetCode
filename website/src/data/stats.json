@@ -1,0 +1,12 @@
+{
+  "total": 111,
+  "easy": 32,
+  "medium": 58,
+  "hard": 21,
+  "languages": {
+    "C++": 97,
+    "SQL": 1,
+    "Java": 4,
+    "Python": 1
+  }
+}

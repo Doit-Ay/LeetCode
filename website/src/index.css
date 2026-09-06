@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.4);
+}
+
+/* LeetCode Description Content Styling */
+.problem-content {
+  line-height: 1.7;
+  color: #374151;
+}
+
+.problem-content h2, .problem-content h3 {
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: #111827;
+}
+
+.problem-content p {
+  margin-bottom: 1rem;
+}
+
+.problem-content code {
+  background-color: #f3f4f6;
+  color: #c2410c;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.375rem;
+  font-size: 0.875em;
+  font-family: 'JetBrains Mono', monospace;
+  border: 1px solid #e5e7eb;
+}
+
+.problem-content pre {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-top: 0.75rem;
+  margin-bottom: 1.25rem;
+  overflow-x: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  color: #1e293b;
+}
+
+.problem-content pre strong {
+  color: #1d4ed8;
+}
+
+.problem-content ul, .problem-content ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  list-style-type: disc;
+}
+
+.problem-content ol {
+  list-style-type: decimal;
+}
+
+.problem-content li {
+  margin-bottom: 0.375rem;
+}
+
+.problem-content img {
+  border-radius: 0.5rem;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem 0;
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  padding: 0.5rem;
+}
+
+.problem-content hr {
+  border-color: #e5e7eb;
+  margin: 1.5rem 0;
+}
+
+.problem-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.problem-content th, .problem-content td {
+  border: 1px solid #e5e7eb;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+.problem-content th {
+  background-color: #f1f5f9;
+}
+
+/* Prism Code Highlighting Styles */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #e5e7eb;
+  font-family: 'JetBrains Mono', Consolas, Monaco, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.6;
+  tab-size: 2;
+  hyphens: none;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #6b7280;
+  font-style: italic;
+}
+
+.token.punctuation {
+  color: #9ca3af;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #f87171;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #34d399;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #38bdf8;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #c084fc;
+}
+
+.token.function,
+.token.class-name {
+  color: #60a5fa;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #fbbf24;
+}
